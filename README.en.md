@@ -24,7 +24,7 @@ A tool version does not have to match the version number of the rule specificati
 
 Every tool must explicitly declare which version of the Hardcore OOP rule specification it supports.
 
-Current rule specification: **v0.1.1**
+Current rule specification: **v0.2.0**
 
 ## Core philosophy
 
@@ -41,6 +41,16 @@ Hardcore OOP enforces the following direction:
 - No circular dependencies
 - Separation of construction from execution
 - Immutable models
+- A single construction path
+- No null values
+- Restricted static behavior
+- No dynamic type resolution
+- No optional dependencies
+- No boolean arguments
+- No exposed mutable collections
+- No bidirectional references
+- Side-effect-free getters
+- At most one function argument
 
 Hardcore OOP does not claim to be a universal best practice for every software system. It is a deliberately extreme specification intended to reduce design ambiguity by imposing strong constraints on object-oriented design.
 
