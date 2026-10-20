@@ -1,6 +1,6 @@
 # Hardcore OOP Rules Specification
 
-**Rule specification version: v0.1.0**
+**Rule specification version: v0.1.1**
 
 This document is a compatible English translation of the authoritative Hardcore OOP rules.
 
@@ -150,6 +150,14 @@ Exposed state must be represented in a form that consumers cannot mutate directl
 Creation of dependency objects must be centralized in the Composition Root.
 
 Ordinary executable classes must not directly construct their own dependencies. Dependencies must be created in the Composition Root and provided through constructors.
+
+### HC-OOP-023: No duplicate function names within the same scope
+
+A scope must not contain multiple functions or methods with the same name.
+
+This prohibition applies even when parameter counts, parameter types, generic parameters, return types, or other parts of the signature differ.
+
+Function and method overloading is therefore prohibited. A function name alone must uniquely identify the operation within its scope.
 
 ## Structural consequence
 
