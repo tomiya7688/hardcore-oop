@@ -1,6 +1,6 @@
 # Hardcore OOP Rules Specification
 
-**Rule specification version: v0.1.1**
+**Rule specification version: v0.2.0**
 
 This document is a compatible English translation of the authoritative Hardcore OOP rules.
 
@@ -158,6 +158,74 @@ A scope must not contain multiple functions or methods with the same name.
 This prohibition applies even when parameter counts, parameter types, generic parameters, return types, or other parts of the signature differ.
 
 Function and method overloading is therefore prohibited. A function name alone must uniquely identify the operation within its scope.
+
+### HC-OOP-024: At most one constructor
+
+A class must not define multiple constructors.
+
+Object construction must have a single path, and constructor overloading is prohibited.
+
+### HC-OOP-025: Do not use null values
+
+Application code must not use `null` to represent the absence of a value.
+
+When absence must be represented, it must use a type or object that expresses that state explicitly.
+
+If `null` may enter through an external boundary, it must be converted immediately at that boundary into an explicit representation.
+
+### HC-OOP-026: No static behavior outside the Entry Point
+
+Static functions or methods must not contain behavior except for the minimum startup logic required by the Entry Point.
+
+Behavior must belong to objects.
+
+Language-level constants are excluded from this restriction.
+
+### HC-OOP-027: No dynamic type or method resolution
+
+Application code must not dynamically resolve a target type or method at runtime through reflection, string-based type or method names, or equivalent mechanisms.
+
+Dependencies and call relationships must remain statically traceable from source code.
+
+Framework or runtime internals are excluded when application code does not directly request such dynamic resolution.
+
+### HC-OOP-028: No optional dependencies
+
+An object's dependency must not be defined so that its presence can vary at runtime.
+
+Required dependencies must be mandatory and provided through the constructor.
+
+If behavior changes depending on whether a dependency exists, the behaviors must be separated into different objects.
+
+### HC-OOP-029: No boolean function arguments
+
+A function or method must not accept a boolean argument.
+
+If a boolean switches execution paths, those paths must be separated into different responsibilities.
+
+### HC-OOP-030: Do not expose mutable collections
+
+A collection that external code can add to, remove from, or replace elements in must not be exposed.
+
+When a collection must be exposed, it must be presented in a form that consumers cannot mutate.
+
+### HC-OOP-031: No bidirectional references
+
+Two objects must not directly reference each other.
+
+If `A` depends on or references `B`, `B` must not directly reference `A`.
+
+### HC-OOP-032: Getters must be side-effect free
+
+A method or property whose purpose is to retrieve a value must not modify external state or the object's internal state.
+
+An operation that appears to retrieve a value must not perform persistence, communication, logging, mutation, or other side effects.
+
+### HC-OOP-033: At most one function argument
+
+A function or method other than a constructor must accept at most one argument.
+
+When multiple values must be passed into one operation, they must be represented as one meaningful type.
 
 ## Structural consequence
 
