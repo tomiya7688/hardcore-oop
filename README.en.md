@@ -24,7 +24,7 @@ A tool version does not have to match the version number of the rule specificati
 
 Every tool must explicitly declare which version of the Hardcore OOP rule specification it supports.
 
-Current rule specification: **v0.1.0**
+Current rule specification: **v0.1.1**
 
 ## Core philosophy
 
@@ -33,6 +33,7 @@ Hardcore OOP enforces the following direction:
 - One responsibility per object
 - One public operation per object
 - One operation per function
+- No duplicate function names within the same scope
 - No concrete-class inheritance
 - Explicit dependencies
 - No global mutable state
