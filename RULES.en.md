@@ -1,6 +1,6 @@
 # Hardcore OOP Rules Specification
 
-**Rule specification version: v0.2.0**
+**Rule specification version: v0.2.1**
 
 This document is a compatible English translation of the authoritative Hardcore OOP rules.
 
@@ -226,6 +226,54 @@ An operation that appears to retrieve a value must not perform persistence, comm
 A function or method other than a constructor must accept at most one argument.
 
 When multiple values must be passed into one operation, they must be represented as one meaningful type.
+
+### HC-OOP-034: Prefer concrete types over generics
+
+Generic types and generic functions should not be used when the same intent can be expressed clearly with concrete types.
+
+Code must not be made generic solely to increase reuse.
+
+Generics are acceptable when responsibilities and behavior remain completely identical across types and generic abstraction centralizes a real change point into one place.
+
+❌
+
+```csharp
+sealed class Handler<T>
+{
+    public void Handle(T value)
+    {
+    }
+}
+```
+
+When the meaning differs by type, use a concrete type.
+
+✅
+
+```csharp
+sealed class UserHandler
+{
+    public void Handle(User user)
+    {
+    }
+}
+```
+
+When the concept and behavior are truly identical across types and the abstraction centralizes changes, generics are acceptable.
+
+✅
+
+```csharp
+sealed class Result<T>
+{
+    public T Value { get; }
+
+    public Result(T value)
+    {
+        Value = value;
+    }
+}
+```
 
 ## Structural consequence
 
