@@ -56,3 +56,5 @@ Hardcore OOP enforces the following direction:
 Hardcore OOP does not claim to be a universal best practice for every software system. It is a deliberately extreme specification intended to reduce design ambiguity by imposing strong constraints on object-oriented design.
 
 See [RULES.en.md](RULES.en.md) for the complete rules.
+
+See [Docs/en/SUITABILITY.md](Docs/en/SUITABILITY.md) for applicability, strengths, and trade-offs.
