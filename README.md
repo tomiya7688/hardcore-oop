@@ -57,4 +57,6 @@ Hardcore OOP は、すべてのソフトウェアに対する普遍的なベス�
 
 詳細は [RULES.md](RULES.md) を参照してください。
 
+適用規模、向いている開発、長所と短所については [Docs/jp/SUITABILITY.md](Docs/jp/SUITABILITY.md) を参照してください。
+
 日本語説明文書の表記規約は [Docs/jp/README.md](Docs/jp/README.md) に定めます。
