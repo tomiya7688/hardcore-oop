@@ -4,14 +4,16 @@ Hardcore OOP is not intended as a universal design method for every kind of soft
 
 It deliberately restricts responsibilities, dependencies, construction paths, and visibility in order to make program structure easier to read unambiguously. This creates strong benefits in systems that profit from explicit structure, while becoming a burden in systems that depend heavily on dynamic extension or broad sharing.
 
-## Suitable scale
+## Scale for full adoption
 
-| Scale | Suitability | Why |
+| Scale | Ease of full adoption | Why |
 | --- | --- | --- |
 | Small | High | The dependency tree remains easy to understand, and structural clarity usually outweighs the extra ceremony. |
 | Medium | High | Effective when responsibility boundaries are clear. Class count and Composition Root size need active control. |
 | Large | Conditional | Whole-system adoption is often too restrictive. Applying it to clearly bounded parts is usually more practical. |
 | Very large | Low | Shared infrastructure, multiple entry points, dynamic extension, and organizational boundaries often conflict with the tree constraint. |
+
+This section describes adoption fit, not an advantage of the method itself.
 
 Scale should not be judged by lines of code alone.
 
@@ -29,7 +31,7 @@ It is usually a poor fit for disposable prototypes, systems built around runtime
 
 For those cases, applying Hardcore OOP only inside a well-defined boundary can be more practical than enforcing it across the entire system.
 
-## Advantages
+## Advantages gained from adoption
 
 ### Traceable dependencies
 
